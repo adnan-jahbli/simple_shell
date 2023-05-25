@@ -27,12 +27,14 @@ int _strncmp(char *str1, char *str2, size_t n)
  * _strlen - function that count the lenght of a string.
  * @str: string to be counted.
  *
- * Return: lenght.
+ * Return: lenght and -1 if it fails.
  */
 int _strlen(char *str)
 {
 	size_t len;
 
+	if (!str)
+		return (-1);
 	len = 0;
 	while (str[len] != '\0')
 		len++;
