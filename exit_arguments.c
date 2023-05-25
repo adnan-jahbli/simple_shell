@@ -43,6 +43,7 @@ int *exit_status){
 		{
 			exit_error(argv[0], args, x);
 			*exit_fail = 2;
+			*exit_status = 2;
 		}
 		else
 		{
@@ -56,6 +57,7 @@ int *exit_status){
 	{
 		exit_error(argv[0], args, x);
 		*exit_fail = 2;
+		*exit_status = 2;
 	}
 	free_args(args);
 }
