@@ -97,12 +97,14 @@ int main(int argc, char **argv)
 						free(filepath);
 					}
 				}
+				if (filepath == NULL)
+					filepath = args[0];
 			}
 			else
 				filepath = args[0];
 			execve(filepath, args, env);
 			command_error(argv[0], args[0], x, check_p, &exit_status);
-			if (check_p != 0)
+			if (check_p != 0 && _strlen(p))
 				free(filepath);
 			free_args(args);
 			free(command);
