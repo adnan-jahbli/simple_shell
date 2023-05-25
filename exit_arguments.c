@@ -48,6 +48,7 @@ int *exit_status){
 		{
 			num %= 256;
 			free_args(args);
+			free(s);
 			exit(num);
 		}
 	}
